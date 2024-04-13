@@ -1,35 +1,6 @@
 <div class="container">
-  <mat-toolbar>
-    <span>{{title}}</span>
-  </mat-toolbar>
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav opened mode="side" [style.width]="sideBarWidth" (mouseover)="toggleSideBarIn()" (mouseleave)="toggleSideBarOut()" >
-      <ul class="side-bar-list"> 
 
-        <li class="side-bar-item">
-          <mat-icon class="side-bar-icons">dashboard</mat-icon>
-          <span [ngClass]="{'show': isSideBarOpen}">Dashboard</span>
-        </li>
+<app-header></app-header>
+<app-side-bar></app-side-bar>
 
-        <li class="side-bar-item">
-          <mat-icon class="side-bar-icons">engineering</mat-icon>
-          <span [ngClass]="{'show': isSideBarOpen}">Settings</span>
-        </li>
-
-        <li class="side-bar-item">
-          <mat-icon class="side-bar-icons">support_agentw</mat-icon>
-          <span [ngClass]="{'show': isSideBarOpen}">Support</span>
-        </li>
-
-      </ul>
-    
-    </mat-sidenav>
-    <mat-sidenav-content [style.margin-left]="sideBarWidth">
-      <div class="main">
-        <router-outlet></router-outlet>
-        this is the main
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
 </div>
