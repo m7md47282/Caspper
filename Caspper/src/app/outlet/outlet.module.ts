@@ -27,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
   ],
   exports: [
     HeaderComponent,

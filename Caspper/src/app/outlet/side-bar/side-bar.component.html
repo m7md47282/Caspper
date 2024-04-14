@@ -4,26 +4,16 @@
         (mouseover)="toggleSideBarIn()"
         (mouseleave)="toggleSideBarOut()">
         <ul class="side-bar-list">
-
-            <li class="side-bar-item">
-                <mat-icon class="side-bar-icons">dashboard</mat-icon>
-                <span [ngClass]="{'show': isSideBarOpen}">Dashboard</span>
-            </li>
-
-            <li class="side-bar-item">
-                <mat-icon class="side-bar-icons">engineering</mat-icon>
-                <span [ngClass]="{'show': isSideBarOpen}">Settings</span>
-            </li>
-
-            <li class="side-bar-item">
-                <mat-icon class="side-bar-icons">support_agentw</mat-icon>
-                <span [ngClass]="{'show': isSideBarOpen}">Support</span>
+ 
+            <li class="side-bar-item" *ngFor="let item of menu">
+                <mat-icon class="side-bar-icons">{{item.icon}}</mat-icon>
+                <span [ngClass]="{'show': isSideBarOpen}">{{item.title}}</span>
             </li>
 
         </ul>
 
     </mat-sidenav>
-    <mat-sidenav-content [style.margin-left]="sideBarWidth">
+    <mat-sidenav-content>
         <div class="main">
             <router-outlet></router-outlet>
             this is the main
