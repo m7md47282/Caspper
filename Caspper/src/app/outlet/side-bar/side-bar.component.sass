@@ -1,5 +1,5 @@
+@import src/defaults/_variables.sass
 
-    
 mat-sidenav-container
     height: calc( 100vh - 70px )
     mat-sidenav, mat-sidenav-content
@@ -15,7 +15,7 @@ mat-sidenav-container
 
 
     .side-bar-icons
-        color: #767676
+        color: $primary
 
     ul.side-bar-list
         padding: 0
@@ -23,20 +23,42 @@ mat-sidenav-container
         margin-top: 30px
         li.side-bar-item
             display: flex
-            align-items: center
             gap: 10px
             margin-top: 20px
-            
-            mat-icon
-                min-width: 24px
-            span
-                width: 0
-                opacity: 0
-                transition: .1s all ease-in-out
-                font-family: inter
-                color: #6d6d6d
-            span.show
-                width: 100%
-                opacity: 1
-                transition-delay: .1s
-                
+            flex-direction: column
+            .item-title-container
+                display: flex
+                align-items: center
+                padding: 5px
+                border-radius: 5px
+                mat-icon
+                    min-width: 24px
+                span.item-title
+                    width: 0
+                    opacity: 0
+                    transition: .1s all ease-in-out
+                    font-family: inter
+                    color: $primary
+                &:hover
+                    background-color: $primary-lightest
+            .nested-list
+                display: none
+                color: $primary
+                font-size: 13px
+                li
+                    padding: 5px
+                    border-radius: 5px
+                    &:hover
+                        background-color: $primary-lightest
+
+        &.opened //when side bar is open
+            .side-bar-item
+                .item-title-container
+                    span.item-title
+                        width: 100%
+                        opacity: 1
+                        transition-delay: .1s
+                        margin-left: 10px
+
+                .nested-list.showSubMenu
+                    display: inline-block

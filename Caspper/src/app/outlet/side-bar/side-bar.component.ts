@@ -17,11 +17,17 @@ export class SideBarComponent implements OnInit {
     this.menu = [
       {
         title: 'Dashboard',
-        icon: 'dashboard'
+        icon: 'dashboard',
+        routerLink: '/'
       },
       {
         title: 'Settings',
-        icon: 'engineering'
+        icon: 'engineering',
+        subMenu:  [{
+          title: 'Product card',
+          icon: 'view_carousel',
+          routerLink: '/cardEditor'
+        }],
       },
       {
         title: 'Support',
@@ -41,6 +47,14 @@ export class SideBarComponent implements OnInit {
   toggleSideBarIn = () =>{
     this.sideBarWidth = this.sideBarOpenedWidth 
     this.isSideBarOpen = true
+  }
+
+  toggleSubMenu(item: any): void {
+    item.showSubMenu = !item.showSubMenu;
+    
+  }
+  isSubMenuOpen(item: any): boolean {
+    return !!item.showSubMenu;
   }
 
 
