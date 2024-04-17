@@ -1,11 +1,14 @@
 @import 'defaults/_variables.sass'
+
+
+
+*
+    transition: all 0.3s ease
+
 body
     margin: 0
     padding: 0
     font-family: inter
-
-*
-    transition: all 0.3s ease
 
 .clickable
     cursor: pointer
@@ -23,3 +26,16 @@ body
 
 .flex
     display: flex
+
+.flex-row
+    display: flex
+    gap: 10px
+    width: 100%
+
+.form-input
+    position: relative
+    input
+        height: 35px
+        border: 1px solid #d4d4d4
+        border-radius: 3px
+        

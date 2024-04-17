@@ -11,7 +11,7 @@
                     <span class="item-title clickable">{{item.title}}</span>
                 </div>
                 
-                <ul class="nested-list" *ngIf="!!item?.subMenu?.length" [ngClass]="{'showSubMenu': isSubMenuOpen(item)}">
+                <ul class="nested-list" *ngIf="!!item?.subMenu?.length"  [ngClass]="{'showSubMenu': isSubMenuOpen(item)}">
                     <li *ngFor="let item of item?.subMenu" class="clickable items-center gap-10" [routerLink]="item?.routerLink">
                         <mat-icon class="side-bar-icons">{{item.icon}}</mat-icon>
                         <span>{{item.title}}</span>

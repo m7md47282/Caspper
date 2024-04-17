@@ -26,7 +26,7 @@ export class SideBarComponent implements OnInit {
         subMenu:  [{
           title: 'Product card',
           icon: 'view_carousel',
-          routerLink: '/cardEditor'
+          routerLink: '/card/card-editor'
         }],
       },
       {
